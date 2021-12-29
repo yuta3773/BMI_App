@@ -15,19 +15,15 @@ class MainActivity : AppCompatActivity() {
         //BMIの計算をするクラスをインスタンス化
         val calculation = BmiCalculation()
 
-        //クリックすると詳細アクティビティに移動
-        binding.nextDetailButton.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("MY_BMI", binding.resultBmiOutput.text)
-            startActivity(intent)
-        }
-
-        // クリックすると測定ボタンを押したら測定値がでる
+        //クリックすると結果アクティビティに移動
         binding.measurementButton.setOnClickListener {
-            binding.resultBmiOutput.text = calculation.result(
+            val resultBmi = calculation.result(
                     height = binding.heightInputForm.text.toString(),
                     weight = binding.weightInputForm.text.toString()
             )
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("MY_BMI", resultBmi)
+            startActivity(intent)
         }
 
         //クリックすると測定値がリセット（リセット）
