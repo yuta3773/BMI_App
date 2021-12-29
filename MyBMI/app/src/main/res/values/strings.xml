@@ -9,17 +9,14 @@
     <string name="button_reset">リセット</string>
     <string name="button_detail">詳細</string>
 
-    <!--  Detail  -->
+    <!--  detail  -->
     <string name="detail_title">BMI詳細</string>
     <string name="my_bmi">あなたのBMI</string>
     <string name="back_button">戻る</string>
-
-    <!--  detail  -->
+    <string name="click_button">CLICK</string>
     <string name="skinny_text">痩せ</string>
     <string name="standard_text">標準</string>
     <string name="obesity_text">肥満</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
 
