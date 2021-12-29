@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         //クリックすると測定値がリセット（リセット）
         binding.resetButton.setOnClickListener {
-            binding.resultBmiOutput.text = ""
+            binding.resultBmiOutput.text = null
+            binding.weightInputForm.text = null
+            binding.heightInputForm.text = null
         }
     }
 }
