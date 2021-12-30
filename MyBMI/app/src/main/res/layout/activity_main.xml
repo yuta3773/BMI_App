@@ -45,6 +45,7 @@
 
         <EditText
             android:id="@+id/height_input_form"
+            android:text=""
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -79,11 +80,11 @@
 
         <EditText
             android:id="@+id/weight_input_form"
+            android:text=""
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:inputType="number"
-            android:text=""
             android:hint="kg"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"

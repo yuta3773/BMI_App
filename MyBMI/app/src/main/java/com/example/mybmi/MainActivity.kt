@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         //BMIの計算をするクラスをインスタンス化
         val calculation = BmiCalculation()
 
-        //クリックすると結果アクティビティに移動
+        //クリックすると詳細アクティビティに移動
         binding.measurementButton.setOnClickListener {
             val resultBmi = calculation.result(
                     height = binding.heightInputForm.text.toString(),
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         //クリックすると測定値がリセット（リセット）
         binding.resetButton.setOnClickListener {
-            binding.resultBmiOutput.text = null
             binding.weightInputForm.text = null
             binding.heightInputForm.text = null
         }
