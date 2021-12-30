@@ -29,20 +29,7 @@ class DetailActivity : AppCompatActivity() {
                 commit()
             }
         }
-        binding.skinnyButton.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.container, SkinnyFragment())
-                addToBackStack(null)
-                commit()
-            }
-        }
-        binding.obesityButton.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.container, SkinnyFragment())
-                addToBackStack(null)
-                commit()
-            }
-        }
+        //クリックするとメイン画面に戻る
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
