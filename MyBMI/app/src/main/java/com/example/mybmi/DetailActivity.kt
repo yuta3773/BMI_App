@@ -24,9 +24,27 @@ class DetailActivity : AppCompatActivity() {
         //クリックすると体重判定の結果を元に文章を表示する
         binding.standardButton.setOnClickListener {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.container, StandardFragment())
-                addToBackStack(null)
-                commit()
+                if (myBmi != null) {
+                    when {
+                        "未入力あり" == myBmi -> {
+                        }
+                        18.5 > myBmi.toInt() -> {
+                            replace(R.id.container, SkinnyFragment())
+                            addToBackStack(null)
+                            commit()
+                        }
+                        25 > myBmi.toInt() -> {
+                            replace(R.id.container, StandardFragment())
+                            addToBackStack(null)
+                            commit()
+                        }
+                        else -> {
+                            replace(R.id.container, ObesityFragment())
+                            addToBackStack(null)
+                            commit()
+                        }
+                    }
+                }
             }
         }
         //クリックするとメイン画面に戻る
@@ -34,6 +52,5 @@ class DetailActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
