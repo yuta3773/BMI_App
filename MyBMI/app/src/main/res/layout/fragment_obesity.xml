@@ -34,7 +34,7 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="肥満です。\n現状より体重を落とし健康的な体型を\n目指して下さい。"
+            android:text="@string/obesity"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textAlignment="center"/>
 

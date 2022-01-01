@@ -7,6 +7,7 @@ import com.example.mybmi.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+    private lateinit var text: StandardFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,33 +22,13 @@ class DetailActivity : AppCompatActivity() {
         val judgement = BmiJudgement(myBmi.toString())
         binding.judgementText.text = judgement.judgement()
 
-        //クリックすると体重判定の結果を元に文章を表示する
-        binding.standardButton.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                if (myBmi != null) {
-                    when {
-                        "未入力あり" == myBmi -> {
-                        }
-                        18.5 > myBmi.toInt() -> {
-                            replace(R.id.container, SkinnyFragment())
-                            addToBackStack(null)
-                            commit()
-                        }
-                        25 > myBmi.toInt() -> {
-                            replace(R.id.container, StandardFragment())
-                            addToBackStack(null)
-                            commit()
-                        }
-                        else -> {
-                            replace(R.id.container, ObesityFragment())
-                            addToBackStack(null)
-                            commit()
-                        }
-                    }
-                }
-            }
+        //フラグメントを表示させる
+        text = StandardFragment(myBmi.toString())
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.container, text)
+            commit()
         }
-        //クリックするとメイン画面に戻る
+
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

@@ -18,6 +18,10 @@
     <string name="standard_text">標準</string>
     <string name="obesity_text">肥満</string>
 
+<!--  フラグメント  -->
+    <string name="standard">あなたは標準的な体重です。\n現状の体重を維持し健康的な体型を\nキープしていてください。</string>
+    <string name="obesity">あなたは太り気味な体重です。\n現状より体重を落とし健康的な体型を\n目指して下さい。</string>
+    <string name="skinny">あなたは痩せ気味な体重です。\n現状の体重を増やし健康的な体型を\n目指してください。</string>
 </resources>
 
 

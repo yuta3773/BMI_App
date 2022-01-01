@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="痩せ方な体重になります。\n現状の体重を増やし健康的な体型を\n目指してください。"
+            android:text="@string/skinny"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white" />

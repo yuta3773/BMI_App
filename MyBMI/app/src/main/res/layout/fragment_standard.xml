@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StandardWeightFragment"
     android:background="@color/black">
-
 
     <LinearLayout
         android:id="@+id/standard_Fragment"
@@ -24,23 +21,11 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/standard_text"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:text="あなたは標準体重です"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="標準的な体重になります。\n現状の体重を維持し健康的な体型を\nキープしていてください。"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textAlignment="center"/>
-
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
