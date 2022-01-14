@@ -17,12 +17,16 @@ class MainActivity : AppCompatActivity() {
 
         //クリックすると詳細アクティビティに移動
         binding.measurementButton.setOnClickListener {
-            val resultBmi = calculation.result(
+            val result = calculation.result(
                     height = binding.heightInputForm.text.toString(),
                     weight = binding.weightInputForm.text.toString()
             )
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("MY_BMI", resultBmi)
+            //BmiInfoクラスをインスタンス化
+            val bmiInfo = BmiInfo(result.bmi)
+
+            intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("MY_BMI", bmiInfo)
+
             startActivity(intent)
         }
 
