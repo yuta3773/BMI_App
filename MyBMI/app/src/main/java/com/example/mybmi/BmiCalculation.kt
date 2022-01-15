@@ -1,17 +1,19 @@
 package com.example.mybmi
 
+import kotlin.math.floor
+
 
 class BmiCalculation {
-    private var height = 0
-    private var weight = 0
-    private var bmiResult = 0
+    private var height: Double = 0.0
+    private var weight: Double = 0.0
+    private var bmiResult: Double = 0.0
     private var bmiType = ""
 
     //身長と体重を受け取りBMI値を計算。戻り値はデータクラス
     fun result(height: String, weight: String ): BmiInfo{
         if (height != "" && weight != "") {
-            this.height = height.toInt()
-            this.weight = weight.toInt()
+            this.height = height.toDouble()
+            this.weight = weight.toDouble()
             bmiResult = this.weight / (this.height * 2 / 100)
             bmiResult
         }
@@ -20,7 +22,7 @@ class BmiCalculation {
             25 > bmiResult -> BmiInfo.Type.Middle.type
             else -> BmiInfo.Type.Height.type
         }
-        return BmiInfo(bmiResult, bmiType)
+        return BmiInfo(floor(bmiResult * 10.0) / 10.0, bmiType)
     }
 }
 

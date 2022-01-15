@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 //BMI計算結果をプロパティとして持つデータ型にする
 data class BmiInfo(
-    val bmi: Int,
+    val bmi: Double,
     val type: String
     ) : Parcelable {
     //結果表示。BmiInfoのみで使用の為入れ子
