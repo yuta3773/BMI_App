@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.mybmi.databinding.FragmentStandardBinding
 
 class StandardFragment(myBmi: BmiInfo) : Fragment() {
-    private val bmiNum = myBmi
+    private val bmiType = myBmi
 
     //bindingで使用する変数、定数
     private var _binding: FragmentStandardBinding? = null
@@ -21,17 +21,14 @@ class StandardFragment(myBmi: BmiInfo) : Fragment() {
         //inflaterの呼び出し
         _binding = FragmentStandardBinding.inflate(inflater, container, false)
 
-        //standardTextにBMI数値に合わせた文書を入れる
-        when {
-            18.5 > bmiNum.bmi -> {
+        //standardTextに体型判定に合わせた文書を入れる
+        when(bmiType.type) {
+            BmiInfo.Type.Low.type ->
                 binding.standardText.setText(R.string.skinny)
-            }
-            25 > bmiNum.bmi -> {
+            BmiInfo.Type.Middle.type ->
                 binding.standardText.setText(R.string.standard)
-            }
-            else -> {
+            BmiInfo.Type.Height.type ->
                 binding.standardText.setText(R.string.obesity)
-            }
         }
         return binding.root
     }
