@@ -18,18 +18,19 @@ class DetailActivity : AppCompatActivity() {
         val myBmi = intent.getParcelableExtra<BmiInfo>("MY_BMI")
         if (myBmi != null) {
             binding.resultDetailBmiOutput.text = myBmi.bmi.toString()
-        }
 
-//        //前画面からのBMI数値を使い体重判定
-//        val judgement = BmiJudgement(myBmi.toString())
-//        binding.judgementText.text = judgement.judgement()
-//
-//        //フラグメントを表示させる
-//        text = StandardFragment(myBmi.toString())
-//        supportFragmentManager.beginTransaction().apply {
-//            replace(R.id.container, text)
-//            commit()
-//        }
+            //前画面からのBMI数値を使い体重判定
+            val judgement = BmiJudgement(myBmi.bmi)
+            binding.judgementText.text = judgement.judgement()
+
+            //フラグメントを表示させる
+            text = StandardFragment(myBmi)
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.container, text)
+                commit()
+            }
+
+        }
 
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

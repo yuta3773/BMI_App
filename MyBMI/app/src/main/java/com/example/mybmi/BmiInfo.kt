@@ -8,10 +8,10 @@ import kotlinx.android.parcel.Parcelize
 data class BmiInfo(
     val bmi: Int) : Parcelable {
     //結果表示。BmiInfoのみで使用の為入れ子
-    enum class Type (){
-        Low,
-        Middle,
-        Height
+    enum class Type(val type: String){
+        Low("痩せ型"),
+        Middle("標準"),
+        Height("肥満")
     }
 }
 

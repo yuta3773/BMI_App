@@ -1,19 +1,16 @@
 package com.example.mybmi
 
-class BmiJudgement(private val bmiNum: String) {
+class BmiJudgement(private val bmiNum: Int) {
     fun judgement(): String {
         return when {
-            "未入力あり" == bmiNum -> {
-                ""
+            18.5 > bmiNum -> {
+                BmiInfo.Type.Low.type
             }
-            18.5 > bmiNum.toInt() -> {
-                "痩せ型"
-            }
-            25 > bmiNum.toInt() -> {
-                "標準体重"
+            25 > bmiNum -> {
+                BmiInfo.Type.Middle.type
             }
             else -> {
-                "肥満"
+                BmiInfo.Type.Height.type
             }
         }
     }
