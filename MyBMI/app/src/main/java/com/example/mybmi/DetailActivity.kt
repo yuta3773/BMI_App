@@ -20,8 +20,7 @@ class DetailActivity : AppCompatActivity() {
             binding.resultDetailBmiOutput.text = myBmi.bmi.toString()
 
             //前画面からのBMI数値を使い体重判定
-            val judgement = BmiJudgement(myBmi.bmi)
-            binding.judgementText.text = judgement.judgement()
+            binding.judgementText.text = myBmi.type
 
             //フラグメントを表示させる
             text = StandardFragment(myBmi)
@@ -29,7 +28,6 @@ class DetailActivity : AppCompatActivity() {
                 replace(R.id.container, text)
                 commit()
             }
-
         }
 
         binding.backButton.setOnClickListener {

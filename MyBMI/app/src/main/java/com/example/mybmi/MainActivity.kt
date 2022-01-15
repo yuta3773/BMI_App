@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
                     height = binding.heightInputForm.text.toString(),
                     weight = binding.weightInputForm.text.toString()
             )
-            //BmiInfoクラスをインスタンス化
-            val bmiInfo = BmiInfo(result.bmi)
 
+            //BmiInfoクラスをインスタンス化
+            val bmiInfo = BmiInfo(result.bmi, result.type)
             intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("MY_BMI", bmiInfo)
 
