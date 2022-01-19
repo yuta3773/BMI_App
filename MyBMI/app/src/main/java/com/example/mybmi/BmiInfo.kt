@@ -10,7 +10,8 @@ data class BmiInfo(
     val type: String
     ) : Parcelable {
     //結果表示。BmiInfoのみで使用の為入れ子
-    enum class Type(val type: String) {
+    @Parcelize
+    enum class Type(val type: String) : Parcelable {
         Low("痩せ型"),
         Middle("標準"),
         Height("肥満")

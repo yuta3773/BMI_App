@@ -1,8 +1,8 @@
 package com.example.mybmi
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mybmi.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -23,16 +23,19 @@ class DetailActivity : AppCompatActivity() {
             binding.judgementText.text = myBmi.type
 
             //フラグメントを表示させる
-            text = StandardFragment(myBmi)
+            text = StandardFragment()
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.container, text)
                 commit()
             }
         }
 
+
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
+
+
 }
