@@ -7,7 +7,7 @@ import com.example.mybmi.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var text: StandardFragment
+    private lateinit var standardFragment: StandardFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +16,7 @@ class DetailActivity : AppCompatActivity() {
 
         //前画面からBMI数値をもらい、詳細画面に入力
         val myBmi = intent.getParcelableExtra<BmiInfo>("MY_BMI")
+
         if (myBmi != null) {
             binding.resultDetailBmiOutput.text = myBmi.bmi.toString()
 
@@ -23,19 +24,18 @@ class DetailActivity : AppCompatActivity() {
             binding.judgementText.text = myBmi.type
 
             //フラグメントを表示させる
-            text = StandardFragment()
+            standardFragment = StandardFragment()
+            val bundle = Bundle()
+            bundle.putParcelable("BMI_TYPE", myBmi)
+            standardFragment.arguments = bundle
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.container, text)
+                replace(R.id.container, standardFragment)
                 commit()
             }
         }
-
-
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
-
-
 }
