@@ -13,14 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="15dp" />
-
 
 <!--  身長  -->
     <LinearLayout
@@ -52,8 +51,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:hint="㎝"
-            android:inputType="number"
-            />
+            android:inputType="number" />
 
     </LinearLayout>
 
@@ -87,11 +85,9 @@
             android:inputType="number"
             android:hint="kg"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </LinearLayout>
-
 
     <!--　　ボタン　　-->
     <LinearLayout
@@ -104,7 +100,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/black"
         android:orientation="horizontal">
-
 
         <Button
             android:id="@+id/measurement_button"
@@ -123,6 +118,5 @@
             android:background="@drawable/btn_sample"
             android:text="@string/button_reset"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

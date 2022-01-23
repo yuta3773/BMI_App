@@ -15,7 +15,6 @@ class StandardFragment() : Fragment() {
     //arguments(アーギュメンツ)から取り出したものを保持する
     private var bmiBody: BmiInfo? = null
 
-
     //フラグメント作成、再作成時に呼び出される
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,6 @@ class StandardFragment() : Fragment() {
     //viewBindingの設定
     private var _binding: FragmentStandardBinding? = null
     private val binding get() = _binding!!
-//    bmiBody = arguments?.getParcelable<BmiInfo>("BMI_TYPE")
 
         override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

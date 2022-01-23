@@ -7,7 +7,6 @@
     tools:context=".DetailActivity"
     android:background="@color/black">
 
-
     <LinearLayout
         android:id="@+id/detail_title"
         android:layout_width="wrap_content"
